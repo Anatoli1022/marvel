@@ -12,6 +12,7 @@
     grid-template-columns: 180px auto;
     column-gap: 30px;
   }
+  //
   &__img {
     width: 180px;
     height: 180px;
@@ -35,13 +36,14 @@
     line-height: 18px;
   }
   &__btns {
-    a:nth-child(1) {
-      margin-right: 30px;
-    }
+    display: flex;
+    column-gap: 20px;
+    row-gap: 10px;
   }
   &__static {
     padding: 40px 35px;
     background-color: $dark;
+    z-index: 1;
     position: relative;
     button {
       margin-top: 13px;
@@ -59,7 +61,30 @@
   }
   &__decoration {
     position: absolute;
-    bottom: 14px;
-    right: -37px;
+    bottom: 20px;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .randomchar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+
+    &__descr {
+      max-width: 500px;
+    }
+    &__btns {
+      flex-wrap: wrap;
+      a:nth-child(1) {
+        margin-right: 0;
+      }
+    }
+    &__static {
+      margin-top: 30px;
+    }
   }
 }
